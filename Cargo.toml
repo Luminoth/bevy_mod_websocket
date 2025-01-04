@@ -7,7 +7,6 @@ readme = "README.md"
 repository = "https://github.com/Luminoth/bevy_mod_websocket"
 edition = "2021"
 keywords = ["bevy", "websocket"]
-
 description = "WebSocket plugin for Bevy game engine"
 
 [dependencies]
@@ -19,3 +18,13 @@ http = "1.2.0"
 thiserror = "2.0.9"
 tokio = { version = "1.42.0", default-features = false }
 tokio-tungstenite = "0.26.1"
+
+[features]
+native-tls = ["tokio-tungstenite/native-tls"]
+native-tls-vendored = ["tokio-tungstenite/native-tls-vendored"]
+rustls-tls-native-roots = ["tokio-tungstenite/rustls-tls-native-roots"]
+rustls-tls-webpki-roots = ["tokio-tungstenite/rustls-tls-webpki-roots"]
+
+[[example]]
+name = "minimal"
+required-features = ["native-tls"]

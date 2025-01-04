@@ -178,6 +178,7 @@ pub struct WebSocketMessageEvent {
 pub struct WebSocketSet;
 
 /// Add this plugin, along with the [`bevy_tokio_tasks::TokioTasksPlugin`] to enable WebSocket connections
+#[derive(Default)]
 pub struct WebSocketPlugin;
 
 impl Plugin for WebSocketPlugin {
